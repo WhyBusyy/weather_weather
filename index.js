@@ -1,5 +1,3 @@
-const myKey = "43ac6165b788362190bdfe96753e2ee1";
-
 const button = document.querySelector(".button");
 
 button.addEventListener("click", () => {
@@ -22,9 +20,7 @@ const locationSec = document.querySelector(".location");
 const descSec = document.querySelector(".desc");
 
 const getWeather = (lat, lon) => {
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${myKey}&units=metric&lang=kr`
-  )
+  fetch(`http://127.0.0.1:3000/weather?lat=${lat}&lon=${lon}`)
     .then((res) => {
       return res.json();
     })
